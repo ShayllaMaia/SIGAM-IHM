@@ -95,11 +95,21 @@ form .btn-green:hover {
 form .btn-red {
     background: #dc3545;
     color: #fff;
-    
+    position: relative; 
 }
 
 form .btn-red a {
+    display: block; 
+    height: 100%; 
     color: #fff;
-    text-decoration: none; 
+    text-decoration: none;
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+
+
+form .btn-red:hover {
+    background: #c82333; 
 }
 
