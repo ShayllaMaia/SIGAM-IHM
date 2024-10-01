@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="registro.css" />
+  <title>SIGAM</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="registro_form">
+    <form action="#">
+      <h3>REGISTRE-SE</h3>
+      <div class="input_box">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" required />
+      </div>
+      <div class="input_box">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="input_box">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" pattern="[0-9]{11}" placeholder="" required />
+      </div>
+      <div class="input_box">
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" required />
+      </div>
+      <div class="input_box">
+        <label for="data_nascimento">Data de nascimento</label>
+        <input type="date" id="data_nascimento" required />
+      </div>
+      <div class="input_box">
+        <label for="password">Senha</label>
+        <input type="password" id="password" class="password_input" required />
+      </div>
+      <div class="input_box">
+        <label for="confirm_password">Confirmar senha</label>
+        <input type="password" id="confirm_password" class="password_input" required />
+      </div>
+      <div class="button_group">
+        <button type="button" class="btn-green" id="cadastrarBtn">CADASTRAR</button>
+        <button type="button" class="btn-red"><a href="/login/login.html">CANCELAR</a></button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+
+<script>
+    document.getElementById('cadastrarBtn').addEventListener('click', function() {
+      Swal.fire({
+        title: 'Sucesso!',
+        text: 'Cadastro realizado com sucesso!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/login/login.html'; 
+        }
+      });
+    });
+  </script>
+  
