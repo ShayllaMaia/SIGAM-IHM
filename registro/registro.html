@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="registro_form">
-    <form action="#">
+    <form id="registroForm" action="/login/login.html" method="GET">
       <h3>REGISTRE-SE</h3>
       <div class="input_box">
         <label for="nome">Nome</label>
@@ -40,17 +40,15 @@
         <input type="password" id="confirm_password" class="password_input" required />
       </div>
       <div class="button_group">
-        <button type="button" class="btn-green" id="cadastrarBtn">CADASTRAR</button>
+        <button type="submit" class="btn-green">CADASTRAR</button>
         <button type="button" class="btn-red" onclick="window.location.href='/login/login.html'">CANCELAR</button>
       </div>
     </form>
   </div>
-</body>
-</html>
 
-
-<script>
-    document.getElementById('cadastrarBtn').addEventListener('click', function() {
+  <script>
+    document.getElementById('registroForm').addEventListener('submit', function(event) {
+      event.preventDefault();
       Swal.fire({
         title: 'Sucesso!',
         text: 'Cadastro realizado com sucesso!',
@@ -63,4 +61,5 @@
       });
     });
   </script>
-  
+</body>
+</html>
