@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ver-membros.css">
+    <title>SIGAM</title>
+    <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="/home/logoIBB.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="/home/home.html">Home</a>
+            <a href="#">Escala</a>
+            <a href="/login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+        </div>
+        <!-- Dropdown button for mobile -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#">Home</a>
+                <a href="#">Escala</a>
+                <a href="/login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSIRA O CONTEÚDO  -->
+    <div>
+        <h1>Membros do Ministério de Louvor</h1>
+        <div class="outer-container">
+            <div class="container">
+
+                <div class="membro">
+                    <p><strong>Nome:</strong> Maria da Silva</p>
+                    <p><strong>Email:</strong> maria@gmail.com</p>
+                    <p><strong>Número:</strong> 68999-2172</p>
+                    <p><strong>Atividade:</strong> Cantar</p>
+                    <p><strong>Restrição:</strong> Seg, 18:00 - 22:00</p>
+                    <div class="botoes">
+                        <button class="editar">Editar</button>
+                        <button class="excluir">Excluir</button>
+                    </div>
+                </div>
+
+                <div class="membro">
+                    <p><strong>Nome:</strong> Bruna Carla</p>
+                    <p><strong>Email:</strong> bruna@gmail.com</p>
+                    <p><strong>Número:</strong> 68 99237-2040</p>
+                    <p><strong>Atividade:</strong> Tocar bateria</p>
+                    <p><strong>Restrição:</strong> Ter, 12:00 - 18:00</p>
+                    <div class="botoes">
+                        <button class="editar">Editar</button>
+                        <button class="excluir">Excluir</button>
+                    </div>
+                </div>
+                <div class="botoes">
+                    <button class="solicitacoes" id="solicitacoes">Solicitações</button>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+
+<script>
+    function toggleMenu() {
+        var x = document.getElementById("dropdownMenu");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>

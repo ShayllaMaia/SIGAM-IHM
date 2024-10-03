@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="visualizacao-louvor.css">
+    <title>SIGAM</title>
+    <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="/home/logoIBB.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="/home/home.html">Home</a>
+            <a href="#">Escala</a>
+            <a href="/login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+        </div>
+        <!-- Dropdown button for mobile -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#">Home</a>
+                <a href="#">Escala</a>
+                <a href="/login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSIRA O CONTEÚDO  -->
+    <div>
+        <h1>Visualização do Ministério de Louvor</h1>
+        <div class="outer-container">
+            <div class="container">
+                <div class="info-section">
+                    <div class="info-box">
+                        <label for="descricao">Descrição:</label>
+                        <textarea id="descricao" readonly rows="6"
+                            style="width: 100%; border: 1px solid #cccccc; padding: 10px; background-color: #f9f9f9; color: #333; border-radius: 5px;">O Ministério de Louvor é um grupo dedicado à adoração e à música, comprometido em glorificar a Deus por meio de canções e ministérios artísticos. Composto por músicos e cantores talentosos, nosso ministério busca criar um ambiente espiritual onde todos possam experimentar a presença de Deus de maneira significativa e transformadora.</textarea>
+                        <label for="lider">Líder:</label>
+                        <textarea id="descricao" readonly rows="1"
+                            style="width: 100%; border: 1px solid #cccccc; padding: 10px; background-color: #f9f9f9; color:#333; border-radius: 5px;">Papa Francisco</textarea>
+                    </div>
+                </div>
+
+                <div class="card-section">
+                    <div class="card">
+                        <h3>Editar</h3>
+                    </div>
+                    <div class="card">
+                        <h3>Cadastrar Atividade</h3>
+                    </div>
+                    <a href="/ver-membros/ver-membros.html">
+                    <div class="card">
+                        <h3>Ver Membros</h3>
+                    </div>
+                    </a>
+                    <div class="card">
+                        <h3>Gerar Escala</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function toggleMenu() {
+        var x = document.getElementById("dropdownMenu");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>

@@ -1,0 +1,162 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar-brand img {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Dropdown for mobile */
+.dropdown {
+    display: none; /* Hidden by default */
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+    }
+
+    .dropdown {
+        display: block; 
+    }
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+/* Container externo */
+.outer-container {
+    background-color: #f0f0f0; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    max-width: 800px;
+    width: 90%; 
+    margin: 20px auto;
+}
+
+/* Container geral */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Membro */
+.membro {
+    background-color: white; 
+    border: 1px solid #cccccc; 
+    border-radius: 5px; 
+    padding: 15px; 
+    margin: 10px 0; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); }
+
+.membro:nth-child(even) {
+    background-color: #e0e0e0; 
+}
+
+/* Estilização dos botões */
+.botoes {
+    margin-top: 10px; 
+    
+}
+
+.botoes button {
+    background-color: #000000; 
+    color: white; 
+    border-radius: 5px; 
+    padding: 8px 12px; 
+    cursor: pointer; 
+    margin-right: 5px; 
+    transition: background-color 0.3s; 
+}
+
+.botoes button:hover {
+    background-color: #FFA500; 
+    border-color: #FFA500;
+}
+
+/* Estilo específico para o botão "Solicitações" */
+.botoes #solicitacoes {
+    background-color: #FFA500; 
+    margin-left: auto;
+    flex-shrink: 0; 
+    margin-top: 10px; 
+    display: flex; 
+    justify-content: space-between; 
+    border-color: #FFA500;
+    
+    
+}
+.botoes #solicitacoes:hover {
+    background-color: #c55800; 
+    border-color: #c55800;
+}
