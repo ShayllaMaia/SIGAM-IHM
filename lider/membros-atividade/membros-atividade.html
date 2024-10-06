@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/lider/membros-atividade/membros-atividade.css">
+    <title>SIGAM</title>
+    <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="/lider/home/logoIBB.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="/lider/home/home.html">Home</a>
+            <a href="#">Escala</a>
+            <a href="/lider/login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+        </div>
+        <!-- Dropdown button for mobile -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#">Home</a>
+                <a href="#">Escala</a>
+                <a href="/lider/login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSIRA O CONTEÚDO  -->
+    <div>
+        <h1>Membros da atividade</h1>
+        <div class="outer-container">
+            <div class="container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Atividade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Carlos</td>
+                            <td>
+                                <button class="excluir">Remover</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="botoes">
+                    <button class="voltar"><a href="/lider/atividades/atividades.html">Voltar</a></button>
+                    <button class="adicionar"><a href="/lider/">Adicionar</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("dropdownMenu");
+            x.style.display = x.style.display === "block" ? "none" : "block";
+        }
+
+        document.querySelectorAll('.excluir').forEach(button => {
+            button.addEventListener('click', function () {
+                const memberName = this.closest('tr').querySelector('td').textContent.trim();
+
+                Swal.fire({
+                    title: 'Membro removido da atividade!',
+                    text: `${memberName} foi removido da atividade com sucesso!`,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.closest('tr').remove();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

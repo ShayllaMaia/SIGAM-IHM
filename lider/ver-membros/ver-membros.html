@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/lider/ver-membros/ver-membros.css">
     <title>SIGAM</title>
     <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -48,7 +49,7 @@
                     <p><strong>Restrição:</strong> Seg, 18:00 - 22:00</p>
                     <div class="botoes">
                         <button class="editar">Editar</button>
-                        <button class="excluir">Excluir</button>
+                        <button class="excluir">Remover</button>
                     </div>
                 </div>
 
@@ -60,25 +61,47 @@
                     <p><strong>Restrição:</strong> Ter, 12:00 - 18:00</p>
                     <div class="botoes">
                         <button class="editar">Editar</button>
-                        <button class="excluir">Excluir</button>
+                        <button class="excluir">Remover</button>
                     </div>
                 </div>
+
                 <div class="botoes">
-                    <button class="solicitacoes" id="solicitacoes">Solicitações</button>
+                    <button class="voltar"><a href="/lider/visualizacao-ministerio-louvor/visualizacao-louvor.html">Voltar</a></button>
+                    <button class="solicitacoes" id="solicitacoes">
+                        <a href="/lider/solicitacoes/solicitacoes.html">Solicitações</a>
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("dropdownMenu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        document.querySelectorAll('.excluir').forEach(button => {
+            button.addEventListener('click', function () {
+
+                const memberName = this.parentElement.parentElement.querySelector('p').textContent.split(':')[1].trim();
+
+                Swal.fire({
+                    title: 'Membro Removido!',
+                    text: `${memberName} foi removido do ministério com sucesso!`,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.parentElement.parentElement.remove();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
-
-<script>
-    function toggleMenu() {
-        var x = document.getElementById("dropdownMenu");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-    }
-</script>
