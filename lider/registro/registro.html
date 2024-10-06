@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="registro.css" />
+  <link rel="stylesheet" href="/lider/registro/registro.css" />
   <title>SIGAM</title>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <div class="registro_form">
-    <form id="registroForm" action="/login/login.html" method="GET">
+    <form id="registroForm" action="/lider/login/login.html" method="GET">
       <h3>REGISTRE-SE</h3>
       <div class="input_box">
         <label for="nome">Nome</label>
@@ -41,7 +41,7 @@
       </div>
       <div class="button_group">
         <button type="submit" class="btn-green">CADASTRAR</button>
-        <button type="button" class="btn-red" onclick="window.location.href='/login/login.html'">CANCELAR</button>
+        <button type="button" class="btn-red" onclick="window.location.href='/lider/login/login.html'">CANCELAR</button>
       </div>
     </form>
   </div>
@@ -56,7 +56,7 @@
         confirmButtonText: 'OK'
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = '/login/login.html'; 
+          window.location.href = '/lider/login/login.html'; 
         }
       });
     });
