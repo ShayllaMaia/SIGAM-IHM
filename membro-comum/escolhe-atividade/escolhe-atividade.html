@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/membro-comum/escolhe-atividade/escolhe-atividade.css">
+    <title>Escolher Atividades - SIGAM</title>
+    <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="/membro-comum/home/logoIBB.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="/membro-comum/home/home.html">Home</a>
+            <a href="#">Escala</a>
+            <a href="/membro-comum/login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+        </div>
+        <!-- Dropdown button for mobile -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#">Home</a>
+                <a href="#">Escala</a>
+                <a href="/membro-comum//login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Escolher Atividades -->
+     <h1 style="text-align: center; margin: 35px 0;">Escolher Atividades</h1>
+    <div class="outer-container">
+       
+        <div class="container">
+            <form>
+                <div class="info-section">
+                    <label for="atividades">Selecione as Atividades:</label>
+                    <div class="checkbox-list">
+                        <input type="checkbox" id="cantar" name="atividade" value="cantar">
+                        <label for="cantar">Cantar</label><br>
+                        <input type="checkbox" id="tocar" name="atividade" value="tocar">
+                        <label for="tocar">Tocar Violão</label><br>
+                        <input type="checkbox" id="ensinar" name="atividade" value="ensinar">
+                        <label for="ensinar">Ensinar Músicas</label><br>
+                        <input type="checkbox" id="ensaios" name="atividade" value="ensaios">
+                        <label for="ensaios">Organizar Ensaios</label>
+                    </div>
+                </div>
+
+                <div class="card-section">
+                    <a href="/membro-comum/visualizacao-ministerio-louvor/visualizacao-louvor.html">
+                        <div class="card">
+                            <h3>Voltar</h3>
+                        </div>
+                    </a>
+                    <a href="/membro-comum/restricao-diasHoras/restricao-diasHoras.html">
+                        <div class="card">
+                            <h3>Continuar</h3>
+                        </div>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("dropdownMenu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

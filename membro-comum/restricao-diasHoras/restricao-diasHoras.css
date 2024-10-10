@@ -1,0 +1,168 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar-brand img {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Dropdown for mobile */
+.dropdown {
+    display: none;
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+    }
+}
+
+/* Container externo */
+.outer-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Container geral */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Seção de restrições */
+.restriction-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Espaçamento entre os dias da semana */
+.dias-semana {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espaçamento entre os dias */
+}
+
+.dias-semana label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Seção de horários (Hora Início e Hora Fim lado a lado) */
+.horarios-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px; /* Espaçamento entre os campos de hora */
+}
+
+.horario-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+input[type="time"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    width: 100px;
+}
+
+/* Seção de botões */
+.button-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os botões */
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f08407c4;
+}

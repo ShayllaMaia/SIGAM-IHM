@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/membro-comum/restricao-diasHoras/restricao-diasHoras.css">
+    <title>SIGAM - Restrição de Dias e Horários</title>
+    <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="/membro-comum/home/logoIBB.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="/membro-comum//home/home.html">Home</a>
+            <a href="#">Escala</a>
+            <a href="/membro-comum//login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+        </div>
+        <!-- Dropdown button for mobile -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#">Home</a>
+                <a href="#">Escala</a>
+                <a href="/membro-comum//login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo -->
+    <div>
+        <h1 style="text-align: center; margin: 35px 0;">Restrição de Dias e Horários</h1>
+        <div class="outer-container">
+            <div class="container">
+                <div class="restriction-section">
+                    <label for="dias-semana">Dias da Semana:</label>
+                    <div id="dias-semana" class="dias-semana">
+                        <label><input type="checkbox"> Domingo</label>
+                        <label><input type="checkbox"> Segunda</label>
+                        <label><input type="checkbox"> Terça</label>
+                        <label><input type="checkbox"> Quarta</label>
+                        <label><input type="checkbox"> Quinta</label>
+                        <label><input type="checkbox"> Sexta</label>
+                        <label><input type="checkbox"> Sábado</label>
+                    </div>
+
+                    <!-- Colocando Hora Início e Hora Fim lado a lado -->
+                    <div class="horarios-section">
+                        <div class="horario-item">
+                            <label for="hora-inicio">Hora Início:</label>
+                            <input type="time" id="hora-inicio" name="hora-inicio">
+                        </div>
+                        <div class="horario-item">
+                            <label for="hora-fim">Hora Fim:</label>
+                            <input type="time" id="hora-fim" name="hora-fim">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-section">
+                    <!-- Botão Voltar -->
+                    <a href="/membro-comum/escolhe-atividade/escolhe-atividade.html">
+                        <button type="button" id="voltar">Voltar</button>
+                    </a>
+                    <a href="/membro-comum/restricao-cadastrada/restricao-cadastrada.html">
+                        <button id="salvar-restricao">Salvar</button>
+                    </a>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("dropdownMenu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
