@@ -98,6 +98,10 @@
                 text: 'Sua solicitação foi enviada com sucesso!',
                 icon: 'success',
                 confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/membro-comum/lista-ministerio-atualizada/lista-ministerio.html'; // Redireciona após o clique em OK
+                }
             });
         });
     </script>

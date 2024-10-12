@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin-pastor/lista-ministerio/lista-ministerio.css">
+    <link rel="stylesheet" href="/navbar/navbar.css"> <!-- Link para o CSS da navbar -->
+    <title>Lista de Ministérios</title>
+    <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="/admin-pastor/home/logoIBB.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="/admin-pastor/home/home.html">Home</a>
+            <a href="#">Escala</a>
+            <a href="/login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+        </div>
+        <!-- Dropdown button for mobile -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="/home/home.html">Home</a>
+                <a href="#">Escala</a>
+                <a href="/login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabela centralizada -->
+    <div class="table-container">
+        <h1>Lista de Ministérios</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Líder</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ministério de Louvor</td>
+                    <td>Carlos Francisco</td>
+                    <td>
+                        <a href="/admin-pastor/visualizacao-ministerio-louvor/visualizacao-louvor.html" class="btn-ver">
+                            Ver
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ministério Infantil</td>
+                    <td>Maria Souza</td>
+                    <td>
+                        <a href="/admin-pastor/visualizacao-ministerio-ensino/visualizacao-ensino.html" class="btn-ver">
+                            Ver
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ministério de Dança</td>
+                    <td>Carlos Lima</td>
+                    <td>
+                        <a href="/admin-pastor/visualizacao-ministerio-acao-social/visualizacao-acao-social.html" class="btn-ver">
+                            Ver
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("dropdownMenu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

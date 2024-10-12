@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin-pastor/lista-membro/lista-membro.css">
+    <link rel="stylesheet" href="/navbar/navbar.css"> <!-- Link para o CSS da navbar -->
+    <title>Lista de Membros</title>
+    <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Adicione o SweetAlert2 -->
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="/admin-pastor/home/logoIBB.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="/admin-pastor/home/home.html">Home</a>
+            <a href="#">Escala</a>
+            <a href="/login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+        </div>
+        <!-- Dropdown button for mobile -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="/admin-pastor/home/home.html">Home</a>
+                <a href="#">Escala</a>
+                <a href="/login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabela centralizada -->
+    <div class="table-container">
+        <h1>Lista de Membros</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Carlos Francisco</td>
+                    <td>carlos.francisco@example.com</td>
+                    <td>
+                        <button class="btn-atribuir">Atribuir Liderança</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Maria Oliveira</td>
+                    <td>maria.oliveira@example.com</td>
+                    <td>
+                        <button class="btn-atribuir">Atribuir Liderança</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Carlos Souza</td>
+                    <td>carlos.souza@example.com</td>
+                    <td>
+                        <button class="btn-atribuir">Atribuir Liderança</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Botão Voltar -->
+        <div class="voltar-container" style="text-align: right; margin-top: 20px;">
+            <a href="/admin-pastor/visualizacao-ministerio-louvor/visualizacao-louvor.html" class="btn-voltar">Voltar</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("dropdownMenu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        // Adicionando evento para cada botão "Atribuir Liderança"
+        document.querySelectorAll('.btn-atribuir').forEach(function (button) {
+            button.addEventListener('click', function () {
+                Swal.fire({
+                    title: 'Liderança Atribuída!',
+                    text: 'A liderança foi atribuída com sucesso!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redirecionar para outra tela
+                        window.location.href = "/admin-pastor/lista-ministerio-atualizada/lista-ministerio.html"; // Altere para a URL desejada
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/admin-pastor/home/home.css">
+  <title>SIGAM</title>
+  <script src="https://kit.fontawesome.com/235f8c027b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#" class="navbar-brand">
+      <img src="/admin-pastor/home/logoIBB.png" alt="Logo" class="logo">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="/admin-pastor/home/home.html">Home</a>
+      <a href="#">Escala</a>
+      <a href="/admin-pastor/login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+    </div>
+    <!-- Dropdown button for mobile -->
+    <div class="dropdown">
+      <button class="dropbtn" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="dropdown-content" id="dropdownMenu">
+        <a href="#">Home</a>
+        <a href="#">Escala</a>
+        <a href="/admin-pastor/login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="ag-format-container">
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="/admin-pastor/lista-ministerio/lista-ministerio.html" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+
+            <div class="ag-courses-item_title">
+             Ministérios
+            </div>
+
+            <div class="ag-courses-item_date-box">
+              3
+            </div>
+          </a>
+        </div>
+
+        
+
+        <div class="ag-courses_item">
+          <a href="#" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+
+            <div class="ag-courses-item_title">
+              Meus Ministérios
+            </div>
+
+            <div class="ag-courses-item_date-box">
+              01
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function toggleMenu() {
+    var x = document.getElementById("dropdownMenu");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+</script>
