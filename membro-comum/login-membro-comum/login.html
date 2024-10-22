@@ -5,10 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/membro-comum/login-membro-comum/login.css" />
   <title>SIGAM</title>
+  <!-- Importando SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function validateLogin(event) {
+      event.preventDefault(); // Impede o envio do formulário
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      // Verificação das credenciais
+      if (email === 'membro@gmail.com' && password === 'senha123') {
+        // Se as credenciais estiverem corretas, redireciona para a página de destino
+        window.location.href = '/membro-comum/home/home.html';
+      } else {
+        // Se as credenciais estiverem incorretas, exibe uma mensagem de erro com SweetAlert2
+        Swal.fire({
+          title: 'E-mail ou senha incorretos!',
+          text: 'Tente novamente.',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        });
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="login_form">
-    <form action="/membro-comum/home/home.html" method="GET">
+    <form onsubmit="validateLogin(event)">
       <h3>ENTRAR NA CONTA</h3>
       <div class="input_box">
         <label for="email">E-mail</label>
