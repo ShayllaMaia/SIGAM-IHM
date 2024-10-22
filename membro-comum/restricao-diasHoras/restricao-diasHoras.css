@@ -166,3 +166,18 @@ button {
 button:hover {
     background-color: #f08407c4;
 }
+
+
+#voltar {
+    background-color: #FFA500;
+}
+
+
+#voltar:hover {
+    background-color: #000000;
+}
+
+
+#salvar-restricao:hover {
+    background-color: rgb(0, 111, 4);
+}

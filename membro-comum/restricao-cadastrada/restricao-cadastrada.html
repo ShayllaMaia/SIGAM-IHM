@@ -20,7 +20,8 @@
         <div class="nav-links" id="navLinks">
             <a href="/membro-comum/home/home.html">Home</a>
             <a href="#">Escala</a>
-            <a href="/membro-comum/login/login.html"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></a>
+            <a href="/membro-comum/login-membro-comum/login.html"><i class="fa-solid fa-right-from-bracket"
+                    style="color: #ffffff;"></i></a>
         </div>
         <!-- Dropdown button for mobile -->
         <div class="dropdown">
@@ -28,9 +29,9 @@
                 <i class="fa fa-bars"></i>
             </button>
             <div class="dropdown-content" id="dropdownMenu">
-                <a href="#">Home</a>
+                <a href="/membro-comum/home/home.html">Home</a>
                 <a href="#">Escala</a>
-                <a href="/membro-comum/login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a href="/membro-comum/login-membro-comum/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
             </div>
         </div>
     </div>
@@ -43,13 +44,13 @@
                 <div class="restriction-section">
                     <label for="dias-semana">Dias da Semana:</label>
                     <div id="dias-semana" class="dias-semana">
-                        <label><input type="checkbox"> Domingo</label>
-                        <label><input type="checkbox"> Segunda</label>
-                        <label><input type="checkbox"> Terça</label>
-                        <label><input type="checkbox"> Quarta</label>
-                        <label><input type="checkbox"> Quinta</label>
-                        <label><input type="checkbox"> Sexta</label>
-                        <label><input type="checkbox"> Sábado</label>
+                        <label><input type="checkbox" class="dia-semana"> Domingo</label>
+                        <label><input type="checkbox" class="dia-semana"> Segunda</label>
+                        <label><input type="checkbox" class="dia-semana"> Terça</label>
+                        <label><input type="checkbox" class="dia-semana"> Quarta</label>
+                        <label><input type="checkbox" class="dia-semana"> Quinta</label>
+                        <label><input type="checkbox" class="dia-semana"> Sexta</label>
+                        <label><input type="checkbox" class="dia-semana"> Sábado</label>
                     </div>
 
                     <div class="hora-container">
@@ -61,12 +62,10 @@
                 </div>
 
                 <div class="button-section">
-                    <a href="/membro-comum/escolhe-atividade/escolhe-atividade.html">
+                    <a href="/membro-comum/restricao-diasHoras/restricao-diasHoras.html">
                         <button type="button" id="voltar">Voltar</button>
                     </a>
-                    <button id="nova-restricao">Nova Restrição</button>
-                    <button id="salvar-restricao">Salvar</button>
-                    <!-- Novo Botão Enviar Solicitação -->
+                    <button id="nova-restricao">Salvar nova restrição</button>
                     <button id="enviar-solicitacao">Solicitar Entrada</button>
                 </div>
             </div>
@@ -76,22 +75,83 @@
         <div class="outer-container">
             <h1 style="text-align: center; margin: 35px 0;">Restrições Cadastradas</h1>
             <div class="restricoes-cadastradas">
-                <p>Segunda das 07:00 até 18:00</p>
+                <!-- O conteúdo das restrições será carregado aqui -->
             </div>
         </div>
+
     </div>
 
     <script>
-        function toggleMenu() {
-            var x = document.getElementById("dropdownMenu");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
+        function carregarRestricoes() {
+            // Recupera as restrições do localStorage
+            const restricao = localStorage.getItem('restricao');
+
+            if (restricao) {
+                const { dias, horaInicio, horaFim } = JSON.parse(restricao);
+                const restricoesContainer = document.querySelector('.restricoes-cadastradas');
+
+                // Cria um novo elemento para a restrição
+                const novaRestricao = document.createElement('div');
+                novaRestricao.innerHTML = `
+                    <span>${dias} das ${horaInicio} até ${horaFim}</span>
+                    <button class="remover-restricao" onclick="removerRestricao(this)">Remover</button>
+                `;
+
+                // Adiciona a nova restrição ao container
+                restricoesContainer.appendChild(novaRestricao);
+
+                // Limpa o localStorage após exibir os dados
+                localStorage.removeItem('restricao');
             }
         }
 
-        // Adicionando evento para o botão "Enviar Solicitação"
+        // Chama a função para carregar as restrições ao carregar a página
+        window.onload = carregarRestricoes;
+
+        // Função para remover restrição
+        function removerRestricao(botao) {
+            Swal.fire({
+                title: 'Remover Restrição?',
+                text: "Você tem certeza que deseja remover esta restrição?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sim, remover!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    botao.parentElement.remove(); // Remove o parágrafo que contém a restrição
+                    Swal.fire('Removido!', 'A restrição foi removida com sucesso.', 'success');
+                }
+            });
+        }
+
+        // Validação e armazenamento da nova restrição
+        document.getElementById('nova-restricao').addEventListener('click', function () {
+            const diasSelecionados = document.querySelectorAll('.dia-semana:checked');
+            const horaInicio = document.getElementById('hora-inicio').value;
+            const horaFim = document.getElementById('hora-fim').value;
+
+            // Verifica se há dias selecionados e se as horas estão preenchidas
+            if (diasSelecionados.length === 0 || !horaInicio || !horaFim) {
+                Swal.fire({
+                    title: 'Campos Inválidos!',
+                    text: 'Por favor, selecione pelo menos um dia da semana e preencha as horas de início e fim da restrição.',
+                    icon: 'warning',
+                    confirmButtonText: 'Ok'
+                });
+            } else {
+                // Cria uma string para os dias selecionados
+                const dias = Array.from(diasSelecionados).map(dia => dia.parentElement.textContent.trim()).join(', ');
+
+                // Armazena os dados no localStorage
+                const restricao = { dias: dias, horaInicio: horaInicio, horaFim: horaFim };
+                localStorage.setItem('restricao', JSON.stringify(restricao));
+
+                // Redireciona para a página de restrições cadastradas
+                window.location.href = "/membro-comum/restricao-cadastrada/restricao-cadastrada.html";
+            }
+        });
+
         document.getElementById('enviar-solicitacao').addEventListener('click', function () {
             Swal.fire({
                 title: 'Solicitação Enviada!',
@@ -105,6 +165,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>

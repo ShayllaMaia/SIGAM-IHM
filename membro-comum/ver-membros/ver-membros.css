@@ -200,3 +200,12 @@ a {
     background-color: #ff9500; 
     border-color: #ff9500;
 }
+
+#voltar {
+    background-color: #FFA500;
+}
+
+
+#voltar:hover {
+    background-color: #000000;
+}

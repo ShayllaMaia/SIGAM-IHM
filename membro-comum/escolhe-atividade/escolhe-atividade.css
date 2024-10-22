@@ -134,7 +134,7 @@ h1 {
 
 .card {
     background-color: #000000;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     border: 1px solid #cccccc;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -142,6 +142,12 @@ h1 {
     text-align: center;
     color: white;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .card:hover {
@@ -161,4 +167,13 @@ button.card {
 
 button.card:hover {
     background-color: #f08407c4;
+}
+
+#voltar {
+    background-color: #FFA500;
+}
+
+
+#voltar:hover {
+    background-color: #000000;
 }

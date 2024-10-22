@@ -148,6 +148,7 @@ input[type="time"] {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 30px;
 }
 
 button {
@@ -175,4 +176,41 @@ button:hover {
 .restricoes-cadastradas p {
     margin: 10px 0;
     font-size: 16px;
+}
+
+#voltar {
+    background-color: #FFA500;
+}
+
+
+#voltar:hover {
+    background-color: #000000;
+}
+
+
+.restricoes-cadastradas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.remover-restricao {
+    background-color: rgb(201, 53, 53);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+.remover-restricao:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+
+#nova-restricao:hover{
+    background-color: rgb(26, 96, 5);
 }
