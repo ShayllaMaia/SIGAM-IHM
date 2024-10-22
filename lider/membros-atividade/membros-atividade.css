@@ -173,3 +173,13 @@ a {
 .excluir:hover {
     background-color:rgb(255, 0, 0); ; 
 }
+
+
+#voltar {
+    background-color: #FFA500;
+}
+
+/* Efeito de hover no botão Voltar */
+#voltar:hover {
+    background-color: #000000; /* Altere a cor conforme desejado */
+}

@@ -167,3 +167,13 @@ h1 {
     flex-direction: column;
     gap: 20px;
 }
+
+#voltar {
+    background-color: #FFA500;
+}
+
+
+#voltar:hover {
+    background-color: #000000;
+}
+

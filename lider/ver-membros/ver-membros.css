@@ -182,7 +182,7 @@ a {
 
 /* Estilo específico para o botão "Solicitações" */
 .botoes #solicitacoes {
-    background-color: #FFA500; 
+    background-color: #ffd413; 
     margin-left: auto;
     flex-shrink: 0; 
     margin-top: 10px; 
@@ -197,6 +197,15 @@ a {
 }
 
 .botoes #solicitacoes:hover {
-    background-color: #ff9500; 
+    background-color: #f2af06; 
     border-color: #ff9500;
+}
+
+#voltar {
+    background-color: #FFA500;
+}
+
+
+#voltar:hover {
+    background-color: #000000;
 }
